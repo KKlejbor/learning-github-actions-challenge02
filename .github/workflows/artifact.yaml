@@ -10,6 +10,10 @@ jobs:
         steps:
             - name: Create a file
               run: touch ${{ env.file_name }}
+            - name: ls
+              run: |
+                pwd
+                ls -al
             - name: Checkout
               uses: actions/checkout@v4.1.1
             - name: Upload a Build Artifact
