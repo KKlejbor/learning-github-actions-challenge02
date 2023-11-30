@@ -8,17 +8,17 @@ jobs:
         name: "Upload artifact"
         runs-on: ubuntu-latest
         steps:
-            - name: Create a file
-              run: touch ${{ env.file_name }}
-            - name: ls
-              run: |
-                pwd
-                ls -al
-            - name: Checkout
-              uses: actions/checkout@v4.1.1
-            - name: Upload a Build Artifact
-              uses: actions/upload-artifact@v3.1.3
-              with:
-                name: ${{ env.artifact_name }}
-                path: ./hello_world.txt
+          - name: Checkout
+            uses: actions/checkout@v4.1.1
+          - name: Create a file
+            run: touch ${{ env.file_name }}
+          - name: ls
+            run: |
+              pwd
+              ls -al
+          - name: Upload a Build Artifact
+            uses: actions/upload-artifact@v3.1.3
+            with:
+              name: ${{ env.artifact_name }}
+              path: ./hello_world.txt
         
